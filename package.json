@@ -1,0 +1,25 @@
+{
+  "fitbit": {
+    "appUUID": "65674375-7919-4c68-b9ec-579b3246508f",
+    "appType": "app",
+    "appDisplayName": "Find Your Bus",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#8bc34a",
+    "requestedPermissions": [
+      "access_internet"
+    ],
+    "buildTargets": [
+      "meson",
+      "gemini"
+    ],
+    "i18n": {
+      "en": {
+        "name": "Find Your Bus"
+      }
+    },
+    "defaultLanguage": "en-US"
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "~3.1.0"
+  }
+}

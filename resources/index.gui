@@ -1,0 +1,144 @@
+<svg>
+  
+<!--   <defs>
+    <symbol id="bus_info">
+      <use class="edit_button" href="#square-button" x="5" width="290" height="75" fill="white">
+        <set href="#text" attributeName="text-buffer" to="Add Bus" />
+        <set href="#text" attributeName="text-length" to="1000" />
+      </use>
+      <text x="5" y="40" text-length="1000" font-size="30" fill="white" >Stop ID:</text>
+      <text x="5" y="50" text-length="1000" font-size="30" fill="white" >Bus:</text>
+      <text x="5" y="80" text-length="1000" font-size="30" fill="white" >Stops Remaining:</text>
+      <text x="5" y="120" text-length="1000" font-size="30" fill="white" />
+    </symbol>
+  </defs> -->
+  
+<!--   <use id="add_stop" href="#square-button" x="245" width="50" height="50" y="5" fill="white">
+    <set href="#text" attributeName="text-buffer" to="+" />
+    <set href="#text" attributeName="y" to="37" />
+    <set href="#text" attributeName="text-length" to="1000" />
+  </use> -->
+<!--   <use href="#bus_info" y="5">  -->
+<!--   <use class="bus_info" id="bus1" href="#square-button" x="5" width="290" height="75" y="$+5" fill="white">
+    <set href="#text" attributeName="text-buffer" to="Add Bus" />
+    <set href="#text" attributeName="text-length" to="1000" />
+  </use> -->
+  
+  <svg id="stop_entry_screen" width="300" height="300">
+   
+    <!-- Blocks other screen content -->
+    <rect width="300" height="300" />
+    
+    <text x="5" y="40" text-length="1000" font-size="30" fill="white" >Stop Number:</text>
+    <use class="number_field" id="stop_id" href="#square-button" x="$+5" width="110" height="50" y="7" fill="white">
+      <set href="#text" attributeName="text-length" to="1000" />
+    </use>
+    
+    <text x="5" y="120" text-length="1000" font-size="30" fill="white" >Bus Number:</text>
+    <use id="region_selector" class="tumbler" href="#tumblerview" x="$+5" width="20" >
+      <use id="item0" href="#tumbler-item" class="item">
+        <text id="content">Q</text>
+      </use>
+      <use id="item1" href="#tumbler-item" class="item">
+        <text id="content">M</text>
+      </use>
+      <use id="item2" href="#tumbler-item" class="item">
+        <text id="content">B</text>
+      </use>
+    </use>
+    <use class="number_field" id="bus_id" href="#square-button" x="$+5" width="100" height="50" y="82" fill="white">
+      <set href="#text" attributeName="text-length" to="1000" />
+    </use>
+    
+    <use id="stop_enter" href="#square-button" x="200" width="95" height="45" y="250" fill="white">
+      <set href="#text" attributeName="text-buffer" to="Done" />
+    </use>
+    
+  </svg>
+  
+  <svg id="output_screen" visibility="hidden">
+    
+    <!-- Blocks other screen content -->
+    <rect width="300" height="300" />
+    
+    <use id="exit_bus_info" href="#square-button" x="5" width="95" height="45" y="5" fill="white">
+      <set href="#text" attributeName="text-buffer" to="Back" />
+    </use>
+    <text class="info" y="80" >Stop ID:</text>
+    <text class="info" id="stop" x="$+5" y="80" />
+    <text class="info" y="110" >Bus:</text>
+    <text class="info" id="bus" x="$+5" y="110"/>
+    <text class="info" y="140" >Stops Remaining:</text>
+    <text class="info" id="stopsRem" x="$+5" y="140" />
+    <text class="info" y="170" >Time Remaining:</text>
+    <text class="info" id="timeRem" x="$+5" y="170" />
+  </svg>
+
+  <!-- Number Pad Screen -->
+  <!-- * MUST GO AT THE END OF SVG FILE! * -->
+  <svg id="number_entry_screen" width="300" height="300" visibility="hidden">
+
+    <!-- Blocks other screen content -->
+    <rect width="300" height="300" />
+    
+    <!-- Input Display -->
+    <text id="input" text-anchor="end" font-family="Tungsten-Medium"
+      x="295" y="50" text-length="1000" font-size="45" fill="white" />
+    
+    <!-- Back Button -->
+    <use id="back_button" href="#square-button" x="-5" y="7" width="65" height="55">
+      <set href="#image" attributeName="display" to="inline" />
+      <set href="#image" attributeName="href" to="back_arrow.png" />
+    </use>
+    
+    <!-- SVG element containing actual number pad -->
+    <svg id="number_pad">
+      <use class="number" href="#push-button" x="5" y="60">
+        <set href="#text" attributeName="text-buffer" to="7" />
+        <set href="#text" attributeName="y" to="10" />
+      </use>
+      <use class="number" href="#push-button" x="$+3" y="$-57">
+        <set href="#text" attributeName="text-buffer" to="8" />
+        <set href="#text" attributeName="y" to="10" />
+      </use>
+      <use class="number" href="#push-button" x="$+3" y="$-57">
+        <set href="#text" attributeName="text-buffer" to="9" />
+        <set href="#text" attributeName="y" to="10" />
+      </use>
+      <use class="number" href="#push-button" x="5" y="$+3">
+        <set href="#text" attributeName="text-buffer" to="4" />
+        <set href="#text" attributeName="y" to="10" />
+      </use>
+      <use class="number" href="#push-button" x="$+3" y="$-57">
+        <set href="#text" attributeName="text-buffer" to="5" />
+        <set href="#text" attributeName="y" to="10" />
+      </use>
+      <use class="number" href="#push-button" x="$+3" y="$-57">
+        <set href="#text" attributeName="text-buffer" to="6" />
+        <set href="#text" attributeName="y" to="10" />
+      </use>
+      <use class="number" href="#push-button" x="5" y="$+3">
+        <set href="#text" attributeName="text-buffer" to="1" />
+        <set href="#text" attributeName="y" to="10" />
+      </use>
+      <use class="number" href="#push-button" x="$+3" y="$-57">
+        <set href="#text" attributeName="text-buffer" to="2" />
+        <set href="#text" attributeName="y" to="10" />
+      </use>
+      <use class="number" href="#push-button" x="$+3" y="$-57">
+        <set href="#text" attributeName="text-buffer" to="3" />
+        <set href="#text" attributeName="y" to="10" />
+      </use>
+      <use class="number" href="#push-button" x="5" y="$+3" width="193">
+        <set href="#text" attributeName="text-buffer" to="0" />
+        <set href="#text" attributeName="y" to="10" />
+      </use>
+      <use class="number" id="number_enter" href="#push-button" x="$+3" y="$-57">
+        <set href="#text" attributeName="text-buffer" to="Done" />
+        <set href="#text" attributeName="y" to="10" />
+      </use>
+    </svg>
+  </svg>
+  <!-- End of Number Pad Screen -->
+  
+</svg>

@@ -1,0 +1,15 @@
+.number {
+  fill: "fb-red";
+  font-family: "System-Regular";
+  font-size: 25;
+  width: 95;
+  height: 57;
+}
+
+.tumbler { y: 90; height: 50}
+.item { height: 30; }
+.item text { font-size: 30; fill: "gold"; x: 0;  }
+
+.info {
+  x: 10; text-length: 1000; font-size: 25; fill: "white";
+}
